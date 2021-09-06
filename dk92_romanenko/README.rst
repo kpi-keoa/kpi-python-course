@@ -1,10 +1,10 @@
 # Робоча директорія
-**Студент:** Романенко А.К.
+**Student:** Романенко А.К.**/**Romanenko A.K.
 
-**Група:** ДК-92
+**Group:** ДК-92
 
 # Контактні дані
 
-- Telegram:    @romanchukkk
-- Ph.number:   +380936570969
-- Email:       dk92.romanenko@lll.kpi.ua
+- Telegram:    `@romanchukkk <https://t.me/romanchukkk>`_.
+- Ph.number:   +380936570969 
+- Email:       `GitHub <dk92.romanenko@lll.kpi.ua>`_.
