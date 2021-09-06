@@ -4,6 +4,6 @@ Student List
 =============     =======================
 Student           Directory
 =============     ========================
-Name Lastname     `dk91_lastname </demo>`_
+Name Lastname     `dk92_lastname </demo>`_
 =============     ========================
-
+Romanenko		  `GitHub <https://github.com/TrivianoXD>`_.
