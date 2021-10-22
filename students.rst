@@ -6,5 +6,6 @@ Student             Directory
 ==================  =========================================
 Anton Romanenko     `dk92_romanenko </dk92_romanenko>`_
 Artem Herashchenko  `dk91_herashchenko </dk91_herashchenko>`_
+Mikhail Kyriienko   `dk91_kyriienko </dk91_kyriienko>`_
 ==================  =========================================
 
