@@ -5,6 +5,6 @@
 
 # Контактні дані
 
-- Telegram:    `@Terminator_Nemo <https://t.me/romanchukkk>`_.
+- Telegram:    `@Terminator_Nemo <https://t.me/Terminator_Nemo>`_.
 - Ph.number:   +380993264218 
 - Email:       `GitHub <arseni.officially@gmail.com>`_.
