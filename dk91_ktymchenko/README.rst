@@ -1,5 +1,4 @@
 Student: Kateryna Tymchenko
-
 Group: DK-91
 
 # Contacts
