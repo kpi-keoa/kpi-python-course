@@ -4,6 +4,6 @@ Student List
 =============     =======================
 Student           Directory
 =============     ========================
-Name Lastname     `dk91_lastname </demo>`_
+Kobets Viktor     `dk92_Viktor </demo>`_
 =============     ========================
 
