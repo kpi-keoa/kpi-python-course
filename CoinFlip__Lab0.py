@@ -26,4 +26,3 @@ def main(num):
   print (resultString)
 userInput = input("Please enter a number of flips: ")
 main(userInput)
-
