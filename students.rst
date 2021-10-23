@@ -4,6 +4,6 @@ Student List
 =============     =======================
 Student           Directory
 =============     ========================
-Kobets Viktor     `dk92_Viktor </demo>`_
+Kobets Viktor     `dk92_Kobets</demo>`_
 =============     ========================
 
