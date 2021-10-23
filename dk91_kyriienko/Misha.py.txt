@@ -1,0 +1,45 @@
+from random import randrange, choice
+from math import log2
+ 
+ 
+def raise_a_power():
+    mode = True
+    power_of_2 = tuple(2 ** i for i in range(0, 17))
+    print("\n\tТренажер степеней 2-ки, вводите целое число")
+    print(""p" - печать степеней, "m" - смена режима, "q" - выход\n")
+ 
+    while True:
+        if mode:
+            temp = randrange(0, 17)
+            answer = input(f"Чему равно 2 ** {temp}: ")
+        else:
+            temp = choice(power_of_2)
+            answer = input(f"Чему равна степень 2-ки числа {temp}: ")
+ 
+        if answer == "q":
+            break
+        elif answer == "m":
+            mode = not mode
+            continue
+        elif answer == "p":
+            for i in range(0, 17):
+                print(f" 2 ** {i} == {2**i}")
+            continue
+        elif not answer.isdigit():
+            print("\tВводить нужно целое число!")
+            continue
+ 
+        if mode:
+            if int(answer) == 2 ** temp:
+                print("\tПравильно")
+            else:
+                print("\tОшибка! Ответ:", 2**temp)
+        else:
+            if int(answer) == int(log2(temp)):
+                print("\tПравильно")
+            else:
+                print("\tОшибка! Ответ:", int(log2(temp)))
+ 
+ 
+if __name__ == "__main__":
+    raise_a_power()
