@@ -1,5 +1,5 @@
+#!/usr/bin/env python
 import math
-
 print("The quadratic equation has the format ax^2 + bx + c = 0\nPlease enter your coeficients")
 
 a = float(input("a = "))
