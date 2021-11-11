@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "MKR", "MKR\MKR.pyproj", "{C33193B7-CADD-4682-8F16-603A2A2ECD39}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C33193B7-CADD-4682-8F16-603A2A2ECD39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C33193B7-CADD-4682-8F16-603A2A2ECD39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FF4E2079-F1FE-48BF-BEBE-252300D7B2FC}
+	EndGlobalSection
+EndGlobal
