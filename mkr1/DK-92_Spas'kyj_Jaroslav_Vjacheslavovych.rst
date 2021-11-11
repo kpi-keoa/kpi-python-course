@@ -68,7 +68,7 @@
        
    
    class Amphibian(Animal):
-       
+       def (swim):
        
        
    class Cat(Mammal):
@@ -78,3 +78,4 @@
       
    
    
+
