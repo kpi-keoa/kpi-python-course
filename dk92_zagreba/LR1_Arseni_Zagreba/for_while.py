@@ -8,9 +8,9 @@ while a<b:
 tt=time.time()
 print("time while",tt-t)
 i=0
-t=time.time()
 a=0
 c=range(b)
+t=time.time()
 for i in c:
     a=a+1
 tt=time.time()
