@@ -14,4 +14,5 @@ Viktor Makhno       `dk91_makhno </dk91_makhno>`_
 Yaroslav Spasky     `dk92_spasky </dk92_spasky>`_
 Yevhenii Tusiak     `dk91_lastname </dk91_tusiak>`_
 Yurii Sak           `dk91_sak </dk91_sak>`_
+Ihor Manukov        `dk92_manukov </dk92_manukov>`_
 ==================  =========================================
