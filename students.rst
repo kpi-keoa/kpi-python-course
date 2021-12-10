@@ -4,6 +4,7 @@ Student List
 Student             Directory
 ==================  =========================================
 Alina Tymchenko	    `dk91_atymchenko </dk91_atymchenko>`_
+Andriy Khyznyak     `dk92_khyznyak </dk92_khyznyak>`_
 Anton Romanenko     `dk92_romanenko </dk92_romanenko>`_
 Dima lazarchuk      `dk92_lazarchuk </dk92_lazarchuk>`_
 Artem Herashchenko  `dk91_herashchenko </dk91_herashchenko>`_
