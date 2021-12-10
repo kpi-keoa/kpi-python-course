@@ -1,42 +1,55 @@
 #!/usr/bin/env python3
+
+"""This module displays all file names and sizes at the given path."""
+
 import argparse
+import os
 
 parser = argparse.ArgumentParser()
-parser.add_argument("val1", type=int, help='First value')
-parser.add_argument("val2", type=int, help='Second value')
+parser.add_argument("dir_path", type=str, help='Paste the link to the directory.')
+parser.add_argument("-a", "--action", help='Select an action.', default="up", choices=['up', 'down'])
 args = parser.parse_args()
 
 
-def gcd(val1: int, val2: int):
-    """Calculate the greatest common divisor of val1 and val2.
+def find_files(dir_path: str):
+    """Create dictionary with file name and size.
 
     Args:
-        val1 (int): The value of the first argument.
-        val2 (int): The value of the second argument.
+        dir_path : The path to the folder.
 
     Returns:
-        The greatest common divisor.
+        dict: Returns a dictionary with folder files and their sizes.
     """
-    while val1 != val2:
-        if val1 > val2:
-            val1 -= val2
-        else:
-            val2 -= val1
-    return val1
+    f_dict = {}
+    files = os.listdir(dir_path)
+    for fi in files:
+        f_path = os.path.join(dir_path, fi)
+        if os.path.isfile(f_path):
+            onlyfiles = fi
+            f_size = round(os.path.getsize(f_path)/1024, 2)
+            f_dict[f_size] = onlyfiles
+    if ~any(f_dict):
+        print("No files found in the specified path") 
+    return f_dict
 
 
-def lcm(val1: int, val2: int):
-    """Calculate the least common multiple of val1 and val2.
-
-    Args:
-        val1 (int): The value of the first argument.
-        val2 (int): The value of the second argument.
-
-    Returns:
-        The least common multiple.
-    """
-    mul = val1 * val2
-    return print(mul // gcd(val1, val2))
+def up():
+    """Display a dictionary in ascending order of its key values."""
+    up_dict = dict(sorted(find_files(args.dir_path).items()))
+    for key in up_dict:
+        print(up_dict[key], '->', key, 'Kb')
 
 
-lcm(args.val1, args.val2)
+def down():
+    """Display a dictionary by decaying the values of its keys."""
+    down_dict = dict(sorted(find_files(args.dir_path).items(), reverse=True))
+    for key in down_dict:
+        print(down_dict[key], '->', key, 'Kb')
+
+
+if args.action == 'up':
+    up()
+elif args.action == 'down':
+    down()
+else:
+    print('OOOPS')
