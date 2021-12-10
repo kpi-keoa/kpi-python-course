@@ -11,4 +11,5 @@ Sergiy Yurchenko    `dk91_yurchenko </dk91_yurchenko>`_
 Viktor Makhno       `dk91_makhno </dk91_makhno>`_
 Yevhenii Tusiak     `dk91_lastname </dk91_tusiak>`_
 Yurii Sak           `dk91_sak </dk91_sak>`_
+Yaroslav Spasky     `dk92_spasky </dk92_spasky>`_
 ==================  =========================================
