@@ -23,3 +23,37 @@
 9. Подключаем к IPad Air стилус
 10. Проверяем, подключен ли к IPad Air стилус сейчас
 11. Для каждого объекта получаем общую информацию (текущие параметры для текущего класса)
+
+## Результат выполнения скрипта
+
+Macbook Pro Battery Charge: 75 %
+
+IPad Air Device Generation: 3 
+
+IPad Pro Pencil Connected: True 
+
+Macbook Pro new battery charge: 50 %
+
+IPad Air Pencil Now Connected?: True 
+
+IPad Air Pencil Connected: True 
+
+Device Model: Macbook Pro
+Model Year: 2019
+Battery Charge: 50%
+
+Device Model: IPad Pro
+Model Year: 2016
+Device Generation: 2
+Is Pencil Connected: True
+Battery Charge: 98%
+
+Device Model: IPad Air
+Model Year: 2018
+Device Generation: 3
+Is Pencil Connected: True
+Battery Charge: 23%
+
+Device Model: IPencil
+Device Generation: 1
+Battery Charge: 100%
