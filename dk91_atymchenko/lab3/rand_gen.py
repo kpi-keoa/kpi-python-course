@@ -12,7 +12,6 @@ LANG = 'uk'
 
 translit = partial(translit, language_code=LANG, reversed=True)
 
-
 def chunker(seq, size):
     return (seq[pos:pos + size] for pos in range(0, len(seq), size))
 
