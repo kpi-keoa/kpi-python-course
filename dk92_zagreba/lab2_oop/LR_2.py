@@ -1,71 +1,87 @@
-
 from functools import total_ordering
-class Component:
-    def temperature(self, t):
-        self.temp = t
+
+
+class ElectricalComponent:
+    def __init__(self, smd, local_name_in, developent_in):
+        self.type = smd
+        self.local_name = local_name_in
+        self.development = developent_in
+
+    def get_clectrical_component_info(self):
+        return (
+            f"Тип: {self.type}"
+            f"\nИмя компонента в схеме: {self.local_name}"
+            f"\nИмя производителя: {self.development}"
+        )
+
+    # Створення обьекта батька від якого буде наслідування
 
 
 @total_ordering
-class Resistor(Component):
-    def __init__(self, ohm, t):
-        self.ohm = ohm
-        self.temperature(t)
+class Resistor(ElectricalComponent):
+    def __init__(self, smd, local_name, developent, denomination):
+        super().__init__(smd, local_name, developent)
+        self.denominatione = denomination
 
     def __eq__(self, other):
-        return self.ohm == other.ohm
+        return self.denominatione == other.denominatione
 
     def __lt__(self, other):
-        return self.ohm < other.ohm
+        return self.denominatione < other.denominatione
 
-    def __repr__(self):  # меняет отображение в системе
-        return f"Резистор нежен для добавления сопротивления в {self.ohm} Om"
+    def __le__(self, other):
+        return self.denominatione <= other.denominatione
 
+    def _repr_(self):
+        return f"Игра была создана на {self.denominatione} игроко"
 
-class Сapaсitor(Component):
-    def __init__(self, Far, t):
-        self.far = Far
-        self.temperature(t)
-
-    def __str__(self):  # меняет отображение при вызове принт
-        return f"Конденсатор нужен для добавления емкости в {self.far} Фарад"
-
-
-class CapacitorSMD(Сapaсitor):
-    def __init__(self, Far, t, tip):
-        self.far = Far
-        self.temperature(t)
-        self.tipe = tip
+    def get_clectrical_component_info(self):
+        return (
+            f"{super().get_clectrical_component_info()} \n"
+            f"Номинал {self.denominatione}\n"
+        )
 
 
-if __name__ == "__main__":
+class Capacitor(ElectricalComponent):
+    def __init__(self, smd, local_name, developent, capacity):
+        super().__init__(smd, local_name, developent)
+        self.capacity = capacity
 
-    def _demonstrate_():
-        print("\nДемонстрация роботы")
-        rezist = Resistor(500, 20)
-        print(rezist.ohm, "ohm", rezist.temp, "t", rezist)
-        cap = Сapaсitor(50, 20)
-        print(cap.far, "Farad", cap.temp, "t", cap)
-        cap_smd = CapacitorSMD(10, 240, 8163)
-        print(cap_smd.far, "Farad", cap_smd.temp, "t", cap_smd.tipe, "tip", cap_smd)
-        rezist_2 = Resistor(500, 20)
-        if rezist_2 == rezist:
-            print("==")
-        if rezist_2 <= rezist:
-            print(">=")
-        if rezist_2 == rezist:
-            print("<=")
+    def __str__(self):
+        return f"Емкость {self.capacity} Фарад"
 
-        rezist_2.om = 1000
+    def get_clectrical_component_info(self):
+        return f"{super().get_clectrical_component_info()} \nЕмкость {self.capacity} Фарад\n"
 
-        if rezist_2 != rezist:
-            print("!=")
-        if rezist_2 > rezist:
-            print(">")
-        rezist_2.om = 1
-        if rezist_2 < rezist:
-            print("<")
+
+class Variable_Resistor(Resistor):
+    def __init__(self, smd, local_name, developent, denomination, Turnovers):
+        super().__init__(smd, local_name, developent, denomination)
+        self.Turnovers = Turnovers
+
+    def get_clectrical_component_info(self):
+        return f"{super().get_clectrical_component_info()}Оборотов: {self.Turnovers}\n"
 
 
 if __name__ == "__main__":
-    print("Етот код не выполняеться при вызове скрипта из другого кода")
-    _demonstrate_()
+    print("Тест")
+
+    R1 = Resistor("SMD", "R1", "Nikom", 160)
+    print(R1.get_clectrical_component_info())
+
+    C1 = Capacitor("DIP", "C1", "Radiomag", 0.24)
+    print(C1.get_clectrical_component_info())
+
+    R3 = Variable_Resistor("DIP", "R3", "Vishay", 8.2, 5)
+    print(R3.get_clectrical_component_info())
+
+    R2 = Resistor("SMD", "R2", "Vishay", 10)
+
+    if R2 == R1:
+        print(R2.local_name, "!=", R1.local_name)
+
+    elif R1 >= R2:
+        print(R1.local_name, ">=", R2.local_name)
+
+    if R1 > R2:
+        print(R1.local_name, ">", R2.local_name)
