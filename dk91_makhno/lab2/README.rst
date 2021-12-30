@@ -1,1 +1,1 @@
-My lab2
+I created a class for playing WOW
