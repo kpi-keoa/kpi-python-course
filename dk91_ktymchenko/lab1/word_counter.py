@@ -1,31 +1,40 @@
-#!/usr/bin/python 3
+#!/usr/bin/env python3
 
 import os
 
 '''This function search all the words in the file'''
 
-def allWords(fileName):
- 
-	with open(fileName, encoding="utf8") as file:
-		readFile = file.read()
-	noLineBreak = readFile.replace("\n", " ")
-	noPunctuation = noLineBreak.replace(",", "").replace(".", "").replace("?", "").replace("!", "")
-	text = noPunctuation.lower()
-	words = text.split()
-	return words
+FILTER_SYMS = ',.?!'
 
-'''The main function contains
-    - inputting the file path
-    - calling the allWords defined functions
-    - outputting all statistics
-'''
+def all_words(file_name):
+
+        with open(file_name, encoding="utf8") as file:
+                read_file = file.read()
+        no_line_break = read_file.replace("\n", " ")
+                
+        text = no_line_break.lower()
+        words = text.split()
+	
+        for i in FILTER_SYMS.split():
+                if i in words:
+                        words = words.replace(i, "")
+
+        return words
+
 
 def result():
-        fileName = input("Specify the file path: ")
-        if not os.path.exists(fileName):
+
+        '''This function contains
+                - inputting the file path
+                - calling the allWords defined functions
+                - outputting all statistics
+        '''
+        
+        file_name = input("Specify the file path: ")
+        if not os.path.exists(file_name):
                 print("File doesn't exist")
         else:
-                words = allWords(fileName)
+                words = all_words(file_name)
                 unique = set(words)
                 print("The number of all words: %d" %len(words))
                 print("The number of unique words: %d" % len(unique))
