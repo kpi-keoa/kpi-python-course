@@ -1,8 +1,7 @@
 import random
-from array import *
 
 
-class Cube_defolt():
+class Cubedefult():
     cube_edges = 6
 
     def __init__(self, edges=cube_edges, is_relollable=False):
@@ -49,15 +48,15 @@ class Cube_defolt():
     def handout(cls, X: int, Y: int):
         players_list = []
         for a in range(X * Y):
-            players_list.append(Cube_defolt().roll())
+            players_list.append(Cubedefult().roll())
         return players_list
 
 
-class Cube_15(Cube_defolt):
+class Cube15(Cubedefult):
         cube_edges = 15
 
 
-class Cube_11(Cube_defolt):
+class Cube11(Cubedefult):
         cube_edges = 11
 
 
