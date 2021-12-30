@@ -1,0 +1,1 @@
+I created a class for playing WOW
