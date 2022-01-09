@@ -1,64 +1,76 @@
-class cinema():
-    def __init__(self, name, genre, duration):
-        self.name = name
-        self.genre
-        self.duration
+import random
 
-    def genreIs(self):
+class Cinema():
+    def __init__(self, name, genre, years):
+        self.name = name
+        self.genre = genre
+        self.years = years
+
+    def genre_is(self):
         print(f"{self.name} genre is {self.genre}")
 
-class film(cinema):
-    def __init__(self, name, genre, duration, parts):
-        cinema.__init__(self, name, genre, duration)
-        self.parts = parts
 
-    def aboutFilm(self):
-        print(f"{self.name}: {self.genre}, {self.duration} minutes")
-        
-    def numberOfParts(self):
+class Film(Cinema):
+    def __init__(self, name, genre, years, duration, parts):
+        super().__init__(name, genre, years)
+        self.parts = parts
+        self.duration = duration
+                
+    def number_of_parts(self):
         print(f"{self.name} contains {self.parts} parts")
 
-class serial(cinema):
-    def __init__(self, name, genre, season):
-        cinema.__init__(self, name, genre)
+    def about_film(self):
+        if self.parts > 1:
+            for part in range(1, self.parts + 1):
+                print(f"{self.name} {part}: {self.genre}, {self.years} production year, {self.duration} minutes")
+                self.years += 2
+        else:
+            print(f"{self.name}: {self.genre}, {self.years} production year, {self.duration} minutes")
+
+
+class Serial(Cinema):
+    def __init__(self, name, genre, years, season):
+        super().__init__(name, genre, years)
+        self.season = season
+        
+    def about_serial(self):
+        if isinstance(self.season, int):
+            print(f"{self.name}: {self.genre}, {self.years}, {self.season} seasons")
+        else:
+            print(f"Seasons amount must be a number!")
+
+
+class Season(Serial):
+    def __init__(self, name, genre, season, years, series=10):
+        super().__init__(name, genre, season, years)
+        self.years = years
+        self.series = series
         self.season = season
 
-    def aboutSerial(self):
-        print(f"{self.name}: {self.genre}, {self.season} seasons")
-        
-    def numberOfSeasons(self):
-        print(f"{self.name} contains {self.season} seasons")
+    def season_info(self):
+        self.season = random.randrange(1, self.season)
+        for i in range(1, self.season):
+            self.years += 1
+        print(f"{self.name} {self.season}: {self.genre}, {self.years}, {self.series} series")
 
-    def numberOfSeries(self):
-        print(f"{self.name} contains {self.series} seasons")
-
-class season(serial):
-    def __init__(self, season, series=1):
-        serial.__init__(self, season)
-        self.series = series
-
-    def seriesNumber(self, series):
-        self.series = series
-
-    def seasonInfo(self):
-        print(f"{self.season} contains {self.series} series")
 
 def main():
-    c = cinema("Titanic", "Film-disaster", 184)
-    c.genreIs()
+    c = Cinema("Titanic", "Film-disaster", 1997)
+    c.genre_is()
 
-    f = film("Ghost", "Fantasy/Drama", 127, 1)
-    f.aboutFilm()
-    f.numberOfParts()
+    f = Film("Ghost", "Fantasy/Drama", 1990, 127, 1)
+    f.number_of_parts()
+    f.about_film()
+    
+    f = Film("Astral", "Horror", 2011, 80, 4)
+    f.number_of_parts()
+    f.about_film()
 
-    s = serial("Game of Trones", "Fantasy/Drama", 8)
-    s.aboutSerial()
-    s.numberOfSeasons()
-    s.numberOfSeries()
+    s = Serial("Game of Trones", "Fantasy/Drama", "2011-2019", 8)
+    s.about_serial()
 
-    n = season(8)
-    n.seriesNumber()
-    n.seasonInfo()
+    n = Season("Game of Trones", "Fantasy/Drama", 9, 2011)
+    n.season_info()
 
 
 if __name__ == '__main__':
