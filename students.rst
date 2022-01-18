@@ -3,7 +3,7 @@ Student List
 ==================  =========================================
 Student             Directory
 ==================  =========================================
-Alina Tymchenko    `dk91_atymchenko </dk91_atymchenko>`_
+Alina Tymchenko     `dk91_atymchenko </dk91_atymchenko>`_
 Andriy Khyznyak     `dk92_khyznyak </dk92_khyznyak>`_
 Anton Romanenko     `dk92_romanenko </dk92_romanenko>`_
 Artem Herashchenko  `dk91_herashchenko </dk91_herashchenko>`_
@@ -18,4 +18,5 @@ Yevhenii Tusiak     `dk91_lastname </dk91_tusiak>`_
 Yurii Sak           `dk91_sak </dk91_sak>`_
 Ihor Manukov        `dk92_manukov </dk92_manukov>`_
 Nazar Diadiun       `dk92_diadiun </dk92_diadiun>`_
+Vladislav Shyrokov  `dk91_shyrokov </dk91_shyrokov>`_
 ==================  =========================================
