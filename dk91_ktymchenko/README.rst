@@ -1,9 +1,4 @@
-Student: Kateryna Tymchenko
-
-Group: DK-91
-
-# Contacts
-
-Telegram: @t_r_i_n_a
-Ph.number: +380990919391
-Email: kate.timchenko.2001@gmail.com
+---------------------------------mkr2-------------------------------------
+Individual task: to create a Tamagotchi. 
+Create a pet so that the user can select an action to do with the pet (feed it, play with it, talk to it) from the menu.
+I've added the ability to create several pets, to know the number of pets, and to choose the action that can be done with any pet.
