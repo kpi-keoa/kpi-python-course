@@ -6,6 +6,21 @@ class Cinema():
         self.genre = genre
         self.years = years
 
+    def year_validator(self):
+        if isinstance(self.years, int) and 1888 <= self.years < 2022:
+            return True
+        return False
+
+    def name_validator(self):
+        if isinstance(self.name, str):
+            return True
+        return False
+
+    def genre_validator(self):
+        if isinstance(self.genre, str):
+            return True
+        return False
+
     def genre_is(self):
         print(f"{self.name} genre is {self.genre}")
 
@@ -20,12 +35,24 @@ class Film(Cinema):
         print(f"{self.name} contains {self.parts} parts")
 
     def about_film(self):
-        if self.parts > 1:
-            for part in range(1, self.parts + 1):
-                print(f"{self.name} {part}: {self.genre}, {self.years} production year, {self.duration} minutes")
-                self.years += 2
-        else:
-            print(f"{self.name}: {self.genre}, {self.years} production year, {self.duration} minutes")
+        year = super().year_validator()
+        name = super().name_validator()
+        genre = super().genre_validator()
+            
+        if not year:
+            return "Error: Invalid type of variable years!"
+        if not name:
+            return "Error: Name must be a string!"
+        if not genre:
+            return "Error: Genre must be a string!"
+
+        if self.parts == 1:
+            about = print(f"{self.name}: {self.genre}, {self.years} production year, {self.duration} minutes")
+            return about
+            
+        for part in range(1, self.parts + 1):
+            print(f"{self.name} {part}: {self.genre}, {self.years} production year, {self.duration} minutes")
+            self.years += 2
 
 
 class Serial(Cinema):
@@ -66,7 +93,7 @@ def main():
     f.number_of_parts()
     f.about_film()
 
-    s = Serial("Game of Trones", "Fantasy/Drama", "2011-2019", 8)
+    s = Serial("Game of Trones", "Fantasy/Drama", 2011, 8)
     s.about_serial()
 
     n = Season("Game of Trones", "Fantasy/Drama", 9, 2011)
