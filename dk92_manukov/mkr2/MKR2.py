@@ -1,74 +1,20 @@
-#!/usr/bin/env python
-
-import os
 import sys
-from random import randint
 
-"""This program realizes roll of cube."""
+def get_differs(line_one: str, line_two: str) -> str:
+    return ','.join(set(line_one) - set(line_two))
 
-if sys.platform == 'linux':
-    def clear_screen():
-        print('\033[H\033[2J', end='')
-else:
-    def clear_screen():
-        os.system('cls')
+trim = True
 
-class Cuberoll():
-    default_sides = 6
-
-    def __init__(self, sides=default_sides, is_rerollable=False):
-        """Construct. Attributes: sides, is_rerollable."""
-
-        self.sides = sides
-        self.is_rerollable = is_rerollable
-        self.num = 0
-
-    def roll(self):
-        """Roll the cube and return number."""
-
-        if self.num == 0 or self.is_rerollable:
-            self.num = randint(1, self.sides)
-        return self.num
-
-    @classmethod
-    def handout(cls, m, n):
-        """Return list."""
-
-        return [[cls()] * m] * n
-
-    def __str__(self):
-        """Cube state."""
-
-        if self.num == 0:
-            return 'Cube is waiting.'
-        else:
-            return f'Cube give {self.num} from {self.sides}'
-
-class Elevencube(Cuberoll):
-    default_sides = 11
-    pass
-
-class Fifteencube(Cuberoll):
-    default_sides = 15
-    pass
-
-def play(cuberoll_players):
-    """Play for order number of players"""
-
-    cubes = Cuberoll.handout(1, int(cuberoll_players))
-    pwc = list(zip(cubes, range(1, int(cuberoll_players+1))))
-    max = 0
-    for i in pwc:
-        i[0][0].num = 0
-        i[0][0].roll()
-        print(f'Player number {i[1]} do his step.')
-        print(f'{str(i[0][0])}\n')
-        if(max < i[0][0].num):
-            max = i[0][0].num
-            max_num = i[1]
-    print(f'Won player, whose points = {max}. His number is {max_num}')
-
-if __name__ == '__main__':
-
-    play(3)
-    play(5)
+with open('1.txt') as f1, open('2.txt') as f2:
+    pairs = list(zip(f1.readlines(), f2.readlines()))
+    byte = 0
+    for pair in pairs:
+        line1 = pair[0].rstrip()
+        line2 = pair[1].rstrip()
+        if line1 != line2:
+            if(~trim):
+                byte += sys.getsizeof(get_differs(line1, line2))
+            else:
+                length = len(line1)
+                byte += sys.getsizeof(get_differs(line1, line2[:length + 1]))
+print(f"In this files {byte} different bytes.")
