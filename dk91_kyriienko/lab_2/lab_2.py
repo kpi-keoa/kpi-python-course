@@ -115,4 +115,4 @@ if __name__ == '__main__':
     print(person_painter)
 
 
-    print(person_painter > person_paint)
+    print(person_painter < person_paint)
