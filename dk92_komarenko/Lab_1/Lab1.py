@@ -21,7 +21,7 @@ group.add_argument('--fhypot',
 args = parser.parse_args()
 
 
-def inputArgs():
+def input_args():
     """Function for input args from keyboard
 
     Returns:
@@ -38,7 +38,7 @@ def inputArgs():
     return ab, ac
 
 
-def calcHypotenuse(ab, ac):
+def calc_hypotenuse(ab, ac):
     """Function for calculate hypotenuse of the triangle
 
     Args:
@@ -51,7 +51,7 @@ def calcHypotenuse(ab, ac):
     return bc
 
 
-def calcArea(ab, ac):
+def calc_area(ab, ac):
     """Function for calculate area of the triangle
 
     Args:
@@ -64,7 +64,7 @@ def calcArea(ab, ac):
     return s
 
 
-def calcPerimeter(ab, ac):
+def calc_perimeter(ab, ac):
     """Function for calculate perimeter of the triangle
 
     Args:
@@ -73,7 +73,7 @@ def calcPerimeter(ab, ac):
     Returns:
         p (float): Perimeter of the triangle.
     """
-    bc = calcHypotenuse(ab, ac)
+    bc = calc_hypotenuse(ab, ac)
     p = ab + ac + bc
     return p
 
@@ -93,11 +93,11 @@ def choice(ab, ac):
                         "type P - calculate Perimeter of triangle\n"
                         "type H - calculate Hypotenuse of triangle\n")
     if calc_choice.upper() == 'A':
-        print("The area of the triangle : %.2f" % calcArea(ab, ac))
+        print("The area of the triangle : %.2f" % calc_area(ab, ac))
     elif calc_choice.upper() == 'P':
-        print("Perimeter of a triangle : %.2f" % calcPerimeter(ab, ac))
+        print("Perimeter of a triangle : %.2f" % calc_perimeter(ab, ac))
     elif calc_choice.upper() == 'H':
-        print("Hypotenuse of a triangle : %.2f" % calcHypotenuse(ab, ac))
+        print("Hypotenuse of a triangle : %.2f" % calc_hypotenuse(ab, ac))
     else:
         print("Bye. See you later.")
         return 1
@@ -108,21 +108,22 @@ def calc():
         use arguments from argparse"""
     if args.farea:
         print("The area of the triangle : %.2f \n"
-              % calcArea(args.ab, args.ac))
+              % calc_area(args.ab, args.ac))
     elif args.fperim:
         print("Perimeter of a triangle : %.2f \n"
-              % calcPerimeter(args.ab, args.ac))
+              % calc_perimeter(args.ab, args.ac))
     elif args.fhypot:
         print("Hypotenuse of a triangle : %.2f \n"
-              % calcHypotenuse(args.ab, args.ac))
+              % calc_hypotenuse(args.ab, args.ac))
     else:
         print('You have not typed a valid operator.')
 
     while 1:
         # Add choice() function for make a choice of operation
-        ab, ac = inputArgs()
+        ab, ac = input_args()
         if choice(ab, ac):
             break
 
 
-calc()
+if __name__ == '__main__':
+    calc()
