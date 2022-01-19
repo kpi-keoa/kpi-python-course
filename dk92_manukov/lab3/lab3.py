@@ -20,6 +20,7 @@ def chunker(seq, size):
 
 def parse_students(filename, lang=LANG):
     """This function enters the names of students and groups in a file."""
+
     with open(filename) as file:
         dictionary = safe_load(file)
         return {
@@ -30,12 +31,12 @@ def parse_students(filename, lang=LANG):
 
 def read_questions(directory):
     """This function enters questions in the dictionary and sorts them."""
+
     path = Path(directory)
     dictionary = {}
     for file in sorted(list(path.glob('*.*'))):
-        with open(file) as f:
-
-            question = f.read().strip().split('\n#')
+        with open(file) as fl:
+            question = fl.read().strip().split('\n#')
             question[1:] = ['#' + q for q in question[1:]]
             dictionary[file.name] = question
 
@@ -45,6 +46,7 @@ def read_questions(directory):
 def generate_questions(students, questions, *, numeach=2):
     """This function generates questions for each student.
     Arguments: students, questions"""
+
     sep = '=' * 30 + '\n'
     files = dict()
     for group, lst in students.items():
@@ -66,6 +68,7 @@ def generate_questions(students, questions, *, numeach=2):
 def write_files(outdir, files):
     """This function creates a question file for each student.
     Arguments: outdir, files"""
+
     odir = Path(outdir)
     odir.mkdir(exist_ok=True)
     for filename, contents in files.items():
