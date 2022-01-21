@@ -1,0 +1,1 @@
+Tusiak Yevhemii task2 
